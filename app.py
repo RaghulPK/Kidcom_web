@@ -51,7 +51,7 @@ lines = list(dictT.values())
 
 app = Flask(__name__)
 
-dg_client = Deepgram(os.getenv('DEEPGRAM_API_KEY'))
+dg_client = Deepgram("ad174cf3a007ca9853c2bbe7a72ab7978597a466")
 
 count = 1
 
