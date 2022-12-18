@@ -371,7 +371,7 @@ def html_response(document):
 
 @app.route('/')
 def index():
-    return render_template('home.html')
+    return render_template('current_index.html')
 
 @routes.get('/story')
 async def main_handler(request):
