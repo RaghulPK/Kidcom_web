@@ -168,6 +168,10 @@
             })
             mediaRecorder.start(250)
             }
+            
+            socket.onerror = function(error) {
+                 alert("Speech error");
+               };
 
 <!--Event listener is added for buttons-->
             const button_socket = new WebSocket('wss://stocksflask-app.onrender.com/button')
@@ -195,6 +199,14 @@
                         this.value = "PLAY";
                     }
                 });
+               
+               button_socket.onerror = function(error) {
+                 alert(`[error]`);
+               };
+               
+               button_socket.onclose = function(event) {
+                   alert('[close] Connection died');
+               };
             }
 
 <!--Function called when data is received from current_main.py-->
