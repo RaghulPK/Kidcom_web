@@ -156,7 +156,7 @@
             })
 
 <!--Establishing the websocket connection for microphone-->
-            const socket = new WebSocket('wss://stocksflask-app.onrender.com/listen')
+            const socket = new WebSocket('wss://ws.stocksflask-app.onrender.com')
 
 <!--Function that gets called when socket connection is made-->
 <!--Event listener is added for microphone-->
@@ -174,7 +174,7 @@
                };
 
 <!--Event listener is added for buttons-->
-            const button_socket = new WebSocket('wss://stocksflask-app.onrender.com/button')
+            const button_socket = new WebSocket('wss://ws.stocksflask-app.onrender.com/button')
             const prev_button = document.getElementById('button1');
             const next_button = document.getElementById('button2');
             const play_button = document.getElementById('button3');
@@ -201,7 +201,7 @@
                 });
                
                button_socket.onerror = function(error) {
-                 alert(`[error]`);
+                 alert("Button error");
                };
                
                button_socket.onclose = function(event) {
