@@ -375,7 +375,7 @@ def index():
 
 @routes.get('/story')
 async def main_handler(request):
-    return html_response('templates/new_index.html')
+    return html_response('templates/current_index.html')
 
 @routes.get('/output')
 async def output_handler(request):
@@ -394,4 +394,4 @@ if __name__ == "__main__":
     aio_app.router.add_route('GET', '/listen', socket)
     aio_app.router.add_route('GET', '/button', button_socket)
     aio_app.add_routes(routes)
-    web.run_app(aio_app)
+    web.run_app(aio_app, host='143.244.135.235', port=8036)
